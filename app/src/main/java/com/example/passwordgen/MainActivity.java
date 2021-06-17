@@ -4,14 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
 
@@ -25,12 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextInputEditText box_total = findViewById(R.id.box_total);
-        TextInputEditText box_length = findViewById(R.id.box_length);
+        AutoCompleteTextView box_total = findViewById(R.id.box_total);
+        AutoCompleteTextView box_length = findViewById(R.id.box_length);
         Button btnGenerate = findViewById(R.id.btnGenerate);
         Button btnReset = findViewById(R.id.btnReset);
         EditText Resultbox = findViewById(R.id.Resultbox);
-        Button btnExit = findViewById(R.id.btnExit);
 
         btnGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void PrintArray(String[] arr){
                 for (int i = 0; i < arr.length ;i++){
                     Resultbox.append(arr[i] + " \n");
-                }
+                }Toast.makeText(MainActivity.this,"Generated Passwords",Toast.LENGTH_SHORT).show();
             }
 
 
@@ -74,14 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 Resultbox.setText("");
                 box_length.setText("");
                 box_total.setText("");
-            }
-        });
-
-        btnExit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                System.exit(0);
+                Toast.makeText(MainActivity.this,"Reset Completed!",Toast.LENGTH_SHORT).show();
             }
         });
 

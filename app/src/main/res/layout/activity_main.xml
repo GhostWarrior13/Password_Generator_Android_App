@@ -6,43 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="146dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginBottom="1dp"
-        android:isScrollContainer="false"
-        android:text="Exit"
-        android:visibility="visible"
-        app:backgroundTint="#C50D0D"
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:clickable="false"
+        android:longClickable="false"
+        android:src="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Resultbox" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="82dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/app_icon"
+        android:clickable="false"
+        android:linksClickable="false"
+        android:longClickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background" />
 
     <Button
         android:id="@+id/btnGenerate"
         android:layout_width="146dp"
         android:layout_height="53dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="1dp"
+        android:background="@drawable/generate"
+        android:fontFamily="sans-serif-black"
         android:isScrollContainer="false"
         android:text="Generate"
         android:visibility="visible"
-        app:backgroundTint="#4CAF50"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:backgroundTint="#00BCD4"
         app:layout_constraintEnd_toStartOf="@+id/btnReset"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/Resultbox"
         tools:ignore="UsingOnClickInXml" />
 
     <Button
@@ -51,119 +62,42 @@
         android:layout_height="53dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/generate"
+        android:fontFamily="sans-serif-black"
         android:isScrollContainer="false"
         android:text="Reset"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:backgroundTint="#00BCD4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnGenerate"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="171dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginBottom="3dp"
-        android:isScrollContainer="false"
-        android:text="Total Passwords"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="195dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginBottom="3dp"
-        android:isScrollContainer="false"
-        android:text="Password Length"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="1dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/box_total"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Type number here"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/box_length"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Type number here"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/Resultbox" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginLeft="78dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginRight="78dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif-thin"
+        android:isScrollContainer="false"
         android:text="Results will be printed below"
+        android:clickable="false"
+        android:longClickable="false"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:isScrollContainer="false"
-
-        app:layout_constraintBottom_toTopOf="@+id/Resultbox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider" />
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/box_length" />
 
     <EditText
         android:id="@+id/Resultbox"
-        android:layout_width="386dp"
-        android:layout_height="267dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:layout_marginBottom="1dp"
-        android:background="#B6B6B6"
+        android:layout_width="331dp"
+        android:layout_height="258dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebox"
         android:clickable="false"
         android:gravity="center_horizontal"
         android:inputType="textMultiLine"
@@ -176,27 +110,60 @@
         android:scrollHorizontally="false"
         android:shadowColor="#050505"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        app:layout_constraintBottom_toTopOf="@+id/btnExit"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="?android:attr/listDivider"
-        android:clickable="false"
-        android:longClickable="false"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+    <AutoCompleteTextView
+        android:id="@+id/box_length"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textbar"
+        android:gravity="center_vertical"
+        android:hint="Length"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGenerate" />
+        app:layout_constraintTop_toBottomOf="@+id/box_total" />
+
+    <AutoCompleteTextView
+        android:id="@+id/box_total"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/textbar"
+        android:gravity="center_vertical"
+        android:hint="Total"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:clickable="false"
+        android:longClickable="false"
+        android:fontFamily="cursive"
+        android:text="PGEN"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/autoCompleteTextView"
+        app:layout_constraintTop_toTopOf="@+id/background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
